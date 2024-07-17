@@ -10,7 +10,6 @@ import plotly.express as px
 
 st.title("Simple GBV With Background Colors")
 
-st.write("You need to do Interval data FIRST it will say it is WRONG until both are inserted.")
 # Get the file
 well_file = st.file_uploader("Choose a file with the well data (Excel workbook)", type=["xlsx", "xls"])
 
@@ -38,7 +37,7 @@ if result_well:
 
 interval_file = st.file_uploader("Choose a file with the interval data (Excel workbook)", type=["xlsx", "xls"])
 
-if well_file is not None:
+if interval_file is not None:
     # To read file as bytes:
     bytes_I_data = interval_file.getvalue()
     
