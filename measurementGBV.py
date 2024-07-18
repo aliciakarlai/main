@@ -6,7 +6,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 from io import BytesIO
 import plotly.express as px
 
-st.title("GBV With Measurements")
+st.title("GBV With Measurements:straight_ruler:")
 st.header("Select The Data")
 # Get the file
 well_file = st.file_uploader("Choose a file with the well data (Excel workbook)", type=["xlsx", "xls"])
@@ -25,11 +25,11 @@ if well_file is not None:
     if result_well:
         try:
             df = df[['API_UWI', 'NNSAPI_UWI', '2dDistanceMean_FT', 'VerticalDistanceMean_FT', 'NNSSideHeel', 'NNSSideToe', 'WBT_ENVInterval', 'ColorCode']]
-            st.write("Good to go!")
+            st.write("Good to go!:clap:")
             unique_apis = df['API_UWI'].unique()
             st.write(unique_apis)
         except:
-            st.write("Well Data does not have all necessary columns: API_UWI, NNSAPI_UWI, 2dDistanceMean_FT, VerticalDistanceMean_FT, NNSSideHeel, NNSSideToe, WBT_ENVInterval, ColorCode")
+            st.write("Error :poop: Well Data does not have all necessary columns: API_UWI, NNSAPI_UWI, 2dDistanceMean_FT, VerticalDistanceMean_FT, NNSSideHeel, NNSSideToe, WBT_ENVInterval, ColorCode")
 
 selected_api = st.text_input("Selected API:")
 st.write("This is your (0,0) point all other wells are based off of.")
