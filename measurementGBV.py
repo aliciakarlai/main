@@ -8,7 +8,7 @@ from io import BytesIO
 import io
 import plotly.express as px
 
-st.title("Simple GBV With Background Colors")
+st.title("GBV With Measurements")
 st.header("Select The Data")
 # Get the file
 well_file = st.file_uploader("Choose a file with the well data (Excel workbook)", type=["xlsx", "xls"])
