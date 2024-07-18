@@ -8,7 +8,7 @@ from io import BytesIO
 import io
 import plotly.express as px
 
-st.title("Simple GBV With Background Colors")
+st.title("GBV With Background Colors:rainbow:")
 
 # Get the file
 well_file = st.file_uploader("Choose a file with the well data (Excel workbook)", type=["xlsx", "xls"])
@@ -27,9 +27,9 @@ result_well= st.button("Check Well Data")
 if result_well:
     try:
         df = df[['API_UWI', 'NNSAPI_UWI', '2dDistanceMean_FT', 'VerticalDistanceMean_FT', 'NNSSideHeel','NNSSideToe', 'WBT_ENVInterval','ColorCode']]
-        st.write("Good to go!")
+        st.write("Good to go!:clap:")
     except:
-        st.write("Well Data does not have all necessary columns: API_UWI, NNSAPI_UWI, 2dDistanceMean_FT, VerticalDistanceMean_FT, NNSSideHeel,NNSSideToe, WBT_ENVInterval,ColorCode")
+        st.write("Error :poop: Well Data does not have all necessary columns: API_UWI, NNSAPI_UWI, 2dDistanceMean_FT, VerticalDistanceMean_FT, NNSSideHeel,NNSSideToe, WBT_ENVInterval,ColorCode")
 
 
 ###############get the interval data
@@ -51,29 +51,29 @@ result_interval= st.button("Check Interval Data")
 if result_interval:
     try:
         df_interval = df_Interval[['WBT_ENVInterval','Interval','Color']]
-        st.write("Good to go!")
+        st.write("Good to go!:clap:")
     except:
-        st.write("Well Data does not have all necessary columns: WBT_ENVInterval,Interval,Color")  
+        st.write("Error :poop: Well Data does not have all necessary columns: WBT_ENVInterval,Interval,Color")  
         
 #heel or toe?
 st.header("Play With The Details")
 direction_options=['Heel','Toe']
 direction_selected=st.selectbox("How would you like to format direction?",options=direction_options)
 
-measurement_options=['Standard(7.08 x 5)','Custom']
-measurement_selected=st.selectbox("How would you like to format size? (inches)",options=measurement_options)
 
-#for the measurements
+measurement_options = ['Standard(7.08 x 5)', 'Custom']
+measurement_selected = st.selectbox("How would you like to format size? (inches)", options=measurement_options)
+
+# For the measurements
 if measurement_selected == "Custom":
-    custom_height=st.number_input("height?", min_value=0.000000, step=0.000001, max_value=20.00001, value=0.000001, format="%f")
+    custom_height = st.number_input("Height?", min_value=0.000000, step=0.000001, max_value=8.01201, value=0.000001, format="%f")
     plotting_area_height_in = custom_height
     
-    custom_width=st.number_input("width?", min_value=0.000000, step=0.000001, max_value=20.00001, value=0.000001, format="%f")
+    custom_width = st.number_input("Width?", min_value=0.000000, step=0.000001, max_value=7.08611, value=0.000001, format="%f")
     plotting_area_width_in = custom_width
 else:
     plotting_area_width_in = 7.08661
     plotting_area_height_in = 5
-
 
 run_button= st.button("Run") 
 
