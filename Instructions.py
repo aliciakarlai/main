@@ -1,17 +1,23 @@
 import streamlit as st
+import pandas as pd
+from io import BytesIO
+import requests
 
     
-st.title("Instructions")
-st.header("GBV With Measurements")
+st.title("Instructions:book:")
+st.header("GBV With Measurements:straight_ruler:")
 
 st.markdown(
  """
 Download the 4D spacing table:
-- In Prism for the list of API's wanted. If it just in the NNSAPI and not the API column it will not show up or it will be colored incorrectly. 
+- In Prism filter for the list of API's wanted. If it just in the NNSAPI and not the API column it will not show up or it will be colored incorrectly. 
 - The table needs to have the columns API_UWI, NNSAPI_UWI, 2dDistanceMean_FT, VerticalDistanceMean_FT, NNSSideHeel, NNSSideToe, WBT_ENVInterval, NNS_ENVInterval. Even if you are not using all of the columns you need to be present. 
+- Columns in prism are called WBT API / UWI, Nearest Neighbour API / UWI, 2D Distance, Mean (ft), Vertical Distance, Mean (ft), Nearest Neighbour Side at Heel, Nearest Neighbour Side at Toe, ENV Interval WBT, ENV Interval NNS.
+ 
 
 Edit the Excel:
 - Insert a column named ColorCode. The code will not run without this exact label. Each row in this column must have a color code, format as a Hex code, to determine the color of the point on the graph. 
+- Color is asigned by API.
 - Close the Excel, the code cannot run if the excel is open. It needs to be saved as a workbook, not a CSV. 
 
 Upload the Excel File:
@@ -32,23 +38,47 @@ Download:
 """
 )
 
+st.write("Downloadable Examples:")
 
-st.header("GBV With Background Colors")
+# URL of the Excel file on GitHub
+well_measure_url = "https://github.com/aliciakarlai/streamlit/raw/main/well_measure.xlsx"
+
+# Fetch the file from GitHub
+response_measure_well = requests.get(well_measure_url)
+response_measure_well.raise_for_status()  # Check that the request was successful
+
+# Create a download button for the Excel file
+st.download_button(
+    label="GBV Well Excel",
+    data=response_measure_well.content,
+    file_name="Well Data.xlsx",
+    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+)
+
+
+
+
+# Add a header to your Streamlit app
+
+st.header("GBV With Background Colors:rainbow:")
 
 st.markdown(
  """
 Download the 4D Spacing Table:
 - Use Prism to get the list of desired APIs. If the API is only in the NNSAPI column and not in the API column, it will not appear or it will be colored incorrectly.
 - The table must include the following columns: API_UWI, NNSAPI_UWI, 2dDistanceMean_FT, VerticalDistanceMean_FT, NNSSideHeel, NNSSideToe, WBT_ENVInterval, NNS_ENVInterval. All columns must be present even if they are not used.
-
+- Columns in prism are called WBT API / UWI, Nearest Neighbour API / UWI, 2D Distance, Mean (ft), Vertical Distance, Mean (ft), Nearest Neighbour Side at Heel, Nearest Neighbour Side at Toe, ENV Interval WBT, ENV Interval NNS.
+ 
 Edit the Excel File:
 - Insert a column named ColorCode. The code will not run without this exact label. Each row in this column must have a color code, formatted as a Hex code, to determine the color of the point on the graph.
+- Color is asigned by API.
 - Close the Excel file before running the code. Save it as a workbook, not as a CSV.
 
 Create Interval Excel:
 - Create a second Excel workbook with the columns WBT_ENVInterval, Interval, Color.
 - The first column, WBT_ENVInterval, will be the intervals that match the output in Prism and will perform an index match with the Well Data Excel. The Interval column will be what you want the interval label to be when exported to a PDF.
 - Finally, the Color column will be the color of the interval, formatted as a Hex code.
+-There can NOT be any blank rows.
 - You can insert rows for intervals that do not have well points but want to be displayed.
 - The intervals are displayed top down (row 2 will be the first interval).
 
@@ -68,3 +98,46 @@ Download:
 - If you are satisfied with the graph, click "Download" to save a graphics-ready PDF.
 """
 )
+
+st.write("Downloadable Examples:")
+# URL of the Excel file on GitHub
+well_url = "https://github.com/aliciakarlai/streamlit/raw/main/Well%20Data.xlsx"
+
+# Fetch the file from GitHub
+response_well = requests.get(well_url)
+response_well.raise_for_status()  # Check that the request was successful
+
+# Create a download button for the Excel file
+st.download_button(
+    label="Well Excel",
+    data=response_well.content,
+    file_name="Well Data.xlsx",
+    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+)
+
+
+# URL of the Excel file on GitHub
+interval_url = "https://github.com/aliciakarlai/streamlit/raw/main/Interval%20Data.xlsx"
+
+# Fetch the file from GitHub
+response_interval = requests.get(interval_url)
+response_interval.raise_for_status()  # Check that the request was successful
+
+# Create a download button for the Excel file
+st.download_button(
+    label="Interval Excel",
+    data=response_interval.content,
+    file_name="Well Interval.xlsx",
+    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+)
+
+# Add a header
+st.header("Example Colors")
+
+# URL of the image on GitHub
+image_url = "https://github.com/aliciakarlai/streamlit/raw/main/Example%20Colors.png"
+
+# Display the image
+st.image(image_url, caption='Example Colors')
+
+
