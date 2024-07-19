@@ -10,6 +10,8 @@ import plotly.express as px
 
 st.title("GBV With Background Colors:rainbow:")
 
+st.link_button("Instructions", "https://gbvgenerator.streamlit.app/~/+/Instructions#95ef0603")
+
 # Get the file
 well_file = st.file_uploader("Choose a file with the well data (Excel workbook)", type=["xlsx", "xls"])
 
