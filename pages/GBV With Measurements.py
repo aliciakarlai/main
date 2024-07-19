@@ -169,7 +169,7 @@ if run_button:
         plt.text(x1, (y0 + y1) / 2, f' {int(y_diff):,}\'', ha='left', va='center', color='black', fontsize=font_size_graphics, fontweight='bold')
 
     plt.grid(False)
-    st.write("df_appended")
+    st.write(df_appended)
     for spine in ax.spines.values():
         spine.set_edgecolor(neutron_gray)
         spine.set_linewidth(.75)
