@@ -146,7 +146,11 @@ st.download_button(
 # Add a header
 st.header("Example Colors")
 colors_url="https://github.com/aliciakarlai/streamlit/raw/main/pages/All%20COLORS.xlsx"
-st.write(colors_url)
+# Read the Excel file into a DataFrame
+df = pd.read_excel(colors_url)
+
+# Display the DataFrame in Streamlit
+st.dataframe(df)
 
 # URL of the image on GitHub
 image_url = "https://github.com/aliciakarlai/streamlit/raw/main/pages/Example%20Colors.png"
