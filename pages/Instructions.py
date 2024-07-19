@@ -55,7 +55,8 @@ st.download_button(
     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 )
 
-
+#create link button for colors
+st.link_button("Custom Colors", "https://gbvgenerator.streamlit.app/~/+/Instructions#example-colors")
 
 
 # Add a header to your Streamlit app
@@ -139,6 +140,6 @@ st.header("Example Colors")
 image_url = "https://github.com/aliciakarlai/streamlit/raw/main/pages/Example%20Colors.png"
 
 # Display the image
-st.image(image_url, caption='Example Colors')
+st.image(image_url)
 
 
