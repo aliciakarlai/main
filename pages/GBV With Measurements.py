@@ -91,14 +91,19 @@ if run_button:
     remaining_apis = list(set(unique_apis) - visited_api)  # Convert remaining APIs to list
     df_1 = df_1.rename(columns={'API_UWI': 'NNSAPI_UWI', 'X': 'Final X', 'Y': 'Final Y'})
 
-    # Create new df with averages for remaining APIs
-    df_2 = pd.DataFrame({'NNSAPI_UWI': remaining_apis})
+    # create new df with averages for remaining API's if there are any
+    if remaining_apis:
+        df_2 = pd.DataFrame({'NNSAPI_UWI': remaining_apis})
 
-    # Calculate mean Final X and Final Y for each remaining NNSAPI_UWI
-    means = df.groupby('NNSAPI_UWI')[['Final X', 'Final Y']].mean().reset_index()
-    df_2 = df_2.merge(means, how='left', left_on='NNSAPI_UWI', right_on='NNSAPI_UWI')
-    # Use pd.concat to append df_2 to df_1
-    df_appended = pd.concat([df_1, df_2], ignore_index=True)
+        # Calculate mean Final X and Final Y for each remaining NNSAPI_UWI
+        means = df.groupby('NNSAPI_UWI')[['Final X', 'Final Y']].mean().reset_index()
+        df_2 = df_2.merge(means, how='left', left_on='NNSAPI_UWI', right_on='NNSAPI_UWI')
+
+        # Use pd.concat to append df_2 to df_1
+        df_appended = pd.concat([df_1, df_2], ignore_index=True)
+    else:
+        df_appended = df_1.copy()
+    
     df_appended = df_appended.rename(columns={'NNSAPI_UWI': 'API_UWI'})
 
     # Make the colors
