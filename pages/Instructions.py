@@ -79,15 +79,15 @@ Download the 4D Spacing Table:
 - Use Prism to get the list of desired APIs. If the API is only in the NNSAPI (nearest neighbour API) column and not in the API column, it will not appear or it will be colored incorrectly.
 - The table must include the following columns: API_UWI, NNSAPI_UWI, 2dDistanceMean_FT, VerticalDistanceMean_FT, NNSSideHeel, NNSSideToe, WBT_ENVInterval, NNS_ENVInterval. All columns must be present even if they are not used.
 - Columns in prism are called WBT API / UWI, Nearest Neighbour API / UWI, 2D Distance, Mean (ft), Vertical Distance, Mean (ft), Nearest Neighbour Side at Heel, Nearest Neighbour Side at Toe, ENV Interval WBT, ENV Interval NNS.
-- If any of the columns are mislabeled the code will not run. 
+
  
 Edit the Excel:
-- Insert a column named ColorCode. The code will not run without this exact label. Each row in this column must have a color code, format as a Hex code (ex.#EF509A) , to determine the color of the point on the graph. 
+- Insert a column named ColorCode, if this is mislabeled it will not run. The code will not run without this exact label. Each row in this column must have a color code, format as a Hex code (ex.#EF509A) , to determine the color of the point on the graph. 
 - Color is assigned by API. You can choose to color by interval, vintage year, unique API or whatever you want. Just make sure all rows with that API and there NN conection have the same color code. 
 - Close the Excel, the code cannot run if the excel is open. It needs to be saved as a WORKBOOK (.xlsx), not a CSV. 
 
 Create Interval Excel:
-- Create a second Excel workbook with the columns WBT_ENVInterval, Interval, Color.
+- Create a second Excel workbook with the columns WBT_ENVInterval, Interval, Color, if these are mislabeled it will not run.
 - The first column, WBT_ENVInterval, will be the intervals that match the output in Prism and will perform an index match with the Well Data Excel. The Interval column will be what you want the interval label to be when exported to a PDF.
 - Finally, the Color column will be the color of the interval, formatted as a Hex code.
 -There can NOT be any blank rows.
