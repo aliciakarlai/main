@@ -90,7 +90,7 @@ Create Interval Excel:
 - Create a second Excel workbook with the columns WBT_ENVInterval, Interval, Color, if these are mislabeled it will not run.
 - The first column, WBT_ENVInterval, will be the intervals that match the output in Prism and will perform an index match with the Well Data Excel. The Interval column will be what you want the interval label to be when exported to a PDF.
 - Finally, the Color column will be the color of the interval, formatted as a Hex code.
--There can NOT be any blank rows.
+- There can NOT be any blank rows.
 - You can insert rows for intervals that do not have well points but want to be displayed.
 - The intervals are displayed top down (row 2 will be the first interval).
 
