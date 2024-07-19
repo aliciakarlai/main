@@ -9,11 +9,11 @@ st.header("GBV With Background Colors:rainbow:")
 Measured_url="https://github.com/aliciakarlai/streamlit/raw/main/GBVcolors.jpg"
 
 # Display the image
-st.image(Measured_url, width=550)
+st.image(Measured_url)
 
 #get image url
 st.header("GBV With Measurements:straight_ruler:")
 
 # Display the image
 Color_url="https://github.com/aliciakarlai/streamlit/raw/main/GBVmeasured_01.jpg"
-st.image(Color_url, width=550)
+st.image(Color_url)
