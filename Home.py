@@ -15,5 +15,5 @@ st.image(Measured_url, width=550)
 st.header("GBV With Measurements:straight_ruler:")
 
 # Display the image
-Color_url="https://github.com/aliciakarlai/streamlit/raw/main/GBVmeasured.jpg"
+Color_url="https://github.com/aliciakarlai/streamlit/raw/main/GBVmeasured_01.jpg"
 st.image(Color_url, width=550)
