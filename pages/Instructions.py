@@ -9,15 +9,20 @@ st.header("GBV With Measurements:straight_ruler:")
 
 st.markdown(
  """
+Decide What Gun Barrel to Make:
+- Open prism and load the gun barrel you would like to make. 
+- In Prism filter for the list of API's that show up in the GBV.
+- If there are not enough connections it will not plot.
+
 Download the 4D spacing table:
-- In Prism filter for the list of API's wanted. If it just in the NNSAPI and not the API column it will not show up or it will be colored incorrectly. 
+- In Prism filter for the list of API's wanted. If it just in the NNSAPI (nearest neighbour API) and not the API column it will not show up or it will be colored incorrectly. 
 - The table needs to have the columns API_UWI, NNSAPI_UWI, 2dDistanceMean_FT, VerticalDistanceMean_FT, NNSSideHeel, NNSSideToe, WBT_ENVInterval, NNS_ENVInterval. Even if you are not using all of the columns you need to be present. 
 - Columns in prism are called WBT API / UWI, Nearest Neighbour API / UWI, 2D Distance, Mean (ft), Vertical Distance, Mean (ft), Nearest Neighbour Side at Heel, Nearest Neighbour Side at Toe, ENV Interval WBT, ENV Interval NNS.
 - If any of the columns are mislabeled the code will not run. 
 
 Edit the Excel:
-- Insert a column named ColorCode. The code will not run without this exact label. Each row in this column must have a color code, format as a Hex code, to determine the color of the point on the graph. 
-- Color is asigned by API.
+- Insert a column named ColorCode. The code will not run without this exact label. Each row in this column must have a color code, format as a Hex code (ex.#EF509A) , to determine the color of the point on the graph. 
+- Color is asigned by API. You can choose to color bu interval, vintage year, unique API or whatever you want. Just make sure all rows with that API and ther NN conection have the same color code. 
 - Close the Excel, the code cannot run if the excel is open. It needs to be saved as a workbook, not a CSV. 
 
 Upload the Excel File:
@@ -65,15 +70,20 @@ st.header("GBV With Background Colors:rainbow:")
 
 st.markdown(
  """
+Decide What Gun Barrel to Make:
+- Open prism and load the gun barrel you would like to make. 
+- In Prism filter for the list of API's that show up in the GBV.
+- If there are not enough connections it will not plot.
+
 Download the 4D Spacing Table:
-- Use Prism to get the list of desired APIs. If the API is only in the NNSAPI column and not in the API column, it will not appear or it will be colored incorrectly.
+- Use Prism to get the list of desired APIs. If the API is only in the NNSAPI (nearest neighbour API) column and not in the API column, it will not appear or it will be colored incorrectly.
 - The table must include the following columns: API_UWI, NNSAPI_UWI, 2dDistanceMean_FT, VerticalDistanceMean_FT, NNSSideHeel, NNSSideToe, WBT_ENVInterval, NNS_ENVInterval. All columns must be present even if they are not used.
 - Columns in prism are called WBT API / UWI, Nearest Neighbour API / UWI, 2D Distance, Mean (ft), Vertical Distance, Mean (ft), Nearest Neighbour Side at Heel, Nearest Neighbour Side at Toe, ENV Interval WBT, ENV Interval NNS.
 - If any of the columns are mislabeled the code will not run. 
  
 Edit the Excel File:
-- Insert a column named ColorCode. The code will not run without this exact label. Each row in this column must have a color code, formatted as a Hex code, to determine the color of the point on the graph.
-- Color is asigned by API.
+- Insert a column named ColorCode. The code will not run without this exact label. Each row in this column must have a color code, formatted as a Hex code (ex.#EF509A), to determine the color of the point on the graph.
+- Color is asigned by API. You can choose to color bu interval, vintage year, unique API or whatever you want. Just make sure all rows with that API and ther NN conection have the same color code.
 - Close the Excel file before running the code. Save it as a workbook, not as a CSV.
 
 Create Interval Excel:
