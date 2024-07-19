@@ -81,7 +81,7 @@ st.download_button(
 st.header("Colored By Vintage")
 vintage_image_url="https://github.com/aliciakarlai/streamlit/raw/main/pages/By%20Vintage_cropped.jpg"
 st.image(vintage_image_url, caption='Colored By Vintage')
-st.write("Downloadable Examples:")
+st.write("Downloadable Example:")
 
 #5 interval well Excel
 vintage_url= "https://github.com/aliciakarlai/streamlit/raw/main/pages/By%20Vintage.xlsx"
@@ -103,7 +103,7 @@ st.download_button(
 st.header("Colored By API")
 API_plot="https://github.com/aliciakarlai/streamlit/raw/main/pages/by%20API_cropped.jpg"
 st.image(API_plot, caption='Colored By API')
-st.write("Downloadable Examples:")
+st.write("Downloadable Example:")
 
 #5 interval well Excel
 API_url= "https://github.com/aliciakarlai/streamlit/raw/main/pages/By%20API.xlsx"
