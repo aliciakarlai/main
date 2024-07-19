@@ -7,6 +7,7 @@ from io import BytesIO
 import plotly.express as px
 
 st.title("GBV With Measurements:straight_ruler:")
+st.link_button("instructions", "https://gbvgenerator.streamlit.app/~/+/Instructions#ec5a4dc8")
 st.header("Select The Data")
 # Get the file
 well_file = st.file_uploader("Choose a file with the well data (Excel workbook)", type=["xlsx", "xls"])
