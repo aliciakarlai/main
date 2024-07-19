@@ -76,3 +76,46 @@ st.download_button(
 
 
 ##############################################################################################
+
+### vintage image
+st.header("Colored By Vintage")
+vintage_image_url="https://github.com/aliciakarlai/streamlit/raw/main/pages/By%20Vintage_cropped.jpg"
+st.image(vintage_image_url, caption='Colored By Vintage')
+st.write("Downloadable Examples:")
+
+#5 interval well Excel
+vintage_url= "https://github.com/aliciakarlai/streamlit/raw/main/pages/By%20Vintage.xlsx"
+vintage= requests.get(vintage_url)
+vintage.raise_for_status()  # Check that the request was successful
+
+
+# Create a download button for the Excel file
+st.download_button(
+    label="Vintage Well Excel",
+    data= vintage.content,
+    file_name="Vintage.xlsx",
+    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+)
+
+##################################
+
+### by API  image
+st.header("Colored By API")
+API_plot="https://github.com/aliciakarlai/streamlit/raw/main/pages/by%20API_cropped.jpg"
+st.image(API_plot, caption='Colored By API')
+st.write("Downloadable Examples:")
+
+#5 interval well Excel
+API_url= "https://github.com/aliciakarlai/streamlit/raw/main/pages/By%20API.xlsx"
+API= requests.get(API_url)
+API.raise_for_status()  # Check that the request was successful
+
+
+# Create a download button for the Excel file
+st.download_button(
+    label="API Well Excel",
+    data= API.content,
+    file_name="API.xlsx",
+    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+)
+
