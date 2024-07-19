@@ -18,12 +18,12 @@ Download the 4D spacing table:
 - In Prism filter for the list of API's wanted. If it just in the NNSAPI (nearest neighbour API) and not the API column it will not show up or it will be colored incorrectly. 
 - The table needs to have the columns API_UWI, NNSAPI_UWI, 2dDistanceMean_FT, VerticalDistanceMean_FT, NNSSideHeel, NNSSideToe, WBT_ENVInterval, NNS_ENVInterval. Even if you are not using all of the columns you need to be present. 
 - Columns in prism are called WBT API / UWI, Nearest Neighbour API / UWI, 2D Distance, Mean (ft), Vertical Distance, Mean (ft), Nearest Neighbour Side at Heel, Nearest Neighbour Side at Toe, ENV Interval WBT, ENV Interval NNS.
-- If any of the columns are mislabeled the code will not run. 
+
 
 Edit the Excel:
-- Insert a column named ColorCode. The code will not run without this exact label. Each row in this column must have a color code, format as a Hex code (ex.#EF509A) , to determine the color of the point on the graph. 
+- Insert a column named ColorCode, if this is mislabeled it will not run. The code will not run without this exact label. Each row in this column must have a color code, format as a Hex code (ex.#EF509A) , to determine the color of the point on the graph. 
 - Color is assigned by API. You can choose to color by interval, vintage year, unique API or whatever you want. Just make sure all rows with that API and there NN conection have the same color code. 
-- Close the Excel, the code cannot run if the excel is open. It needs to be saved as a WORKBOOK, not a CSV. 
+- Close the Excel, the code cannot run if the excel is open. It needs to be saved as a WORKBOOK (.xlsx), not a CSV. 
 
 Upload the Excel File:
 - Use the drag and drop feature to upload the Excel file.
@@ -84,7 +84,7 @@ Download the 4D Spacing Table:
 Edit the Excel:
 - Insert a column named ColorCode. The code will not run without this exact label. Each row in this column must have a color code, format as a Hex code (ex.#EF509A) , to determine the color of the point on the graph. 
 - Color is assigned by API. You can choose to color by interval, vintage year, unique API or whatever you want. Just make sure all rows with that API and there NN conection have the same color code. 
-- Close the Excel, the code cannot run if the excel is open. It needs to be saved as a WORKBOOK, not a CSV. 
+- Close the Excel, the code cannot run if the excel is open. It needs to be saved as a WORKBOOK (.xlsx), not a CSV. 
 
 Create Interval Excel:
 - Create a second Excel workbook with the columns WBT_ENVInterval, Interval, Color.
@@ -145,6 +145,8 @@ st.download_button(
 
 # Add a header
 st.header("Example Colors")
+colors_url="https://github.com/aliciakarlai/streamlit/raw/main/pages/All%20COLORS.xlsx"
+st.write(colors_url)
 
 # URL of the image on GitHub
 image_url = "https://github.com/aliciakarlai/streamlit/raw/main/pages/Example%20Colors.png"
