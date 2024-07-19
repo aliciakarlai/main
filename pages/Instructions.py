@@ -23,7 +23,7 @@ Download the 4D spacing table:
 Edit the Excel:
 - Insert a column named ColorCode. The code will not run without this exact label. Each row in this column must have a color code, format as a Hex code (ex.#EF509A) , to determine the color of the point on the graph. 
 - Color is assigned by API. You can choose to color by interval, vintage year, unique API or whatever you want. Just make sure all rows with that API and there NN conection have the same color code. 
-- Close the Excel, the code cannot run if the excel is open. It needs to be saved as a workbook, not a CSV. 
+- Close the Excel, the code cannot run if the excel is open. It needs to be saved as a WORKBOOK, not a CSV. 
 
 Upload the Excel File:
 - Use the drag and drop feature to upload the Excel file.
@@ -84,7 +84,7 @@ Download the 4D Spacing Table:
 Edit the Excel:
 - Insert a column named ColorCode. The code will not run without this exact label. Each row in this column must have a color code, format as a Hex code (ex.#EF509A) , to determine the color of the point on the graph. 
 - Color is assigned by API. You can choose to color by interval, vintage year, unique API or whatever you want. Just make sure all rows with that API and there NN conection have the same color code. 
-- Close the Excel, the code cannot run if the excel is open. It needs to be saved as a workbook, not a CSV. 
+- Close the Excel, the code cannot run if the excel is open. It needs to be saved as a WORKBOOK, not a CSV. 
 
 Create Interval Excel:
 - Create a second Excel workbook with the columns WBT_ENVInterval, Interval, Color.
