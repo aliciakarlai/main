@@ -31,7 +31,7 @@ st.header("GBV With Measurements:straight_ruler:")
 
 # URL of the image on GitHub
 image_url = "https://github.com/aliciakarlai/streamlit/raw/main/pages/Connections_measured.jpg"
-
+st.image(image_url)
 st.markdown(
 """
 - After inputting the Excel and selecting the API, it takes the selected API and plots it first at point (0,0). That's the pink point.
