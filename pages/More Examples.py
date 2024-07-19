@@ -33,7 +33,7 @@ status.raise_for_status()  # Check that the request was successful
 
 # Create a download button for the Excel file
 st.download_button(
-    label="Well Excel",
+    label="Well Status Excel",
     data= status.content,
     file_name="Well Status Data.xlsx",
     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
