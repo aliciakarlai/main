@@ -13,7 +13,7 @@ Download the 4D spacing table:
 - In Prism filter for the list of API's wanted. If it just in the NNSAPI and not the API column it will not show up or it will be colored incorrectly. 
 - The table needs to have the columns API_UWI, NNSAPI_UWI, 2dDistanceMean_FT, VerticalDistanceMean_FT, NNSSideHeel, NNSSideToe, WBT_ENVInterval, NNS_ENVInterval. Even if you are not using all of the columns you need to be present. 
 - Columns in prism are called WBT API / UWI, Nearest Neighbour API / UWI, 2D Distance, Mean (ft), Vertical Distance, Mean (ft), Nearest Neighbour Side at Heel, Nearest Neighbour Side at Toe, ENV Interval WBT, ENV Interval NNS.
- 
+- If any of the columns are miss labeled the code will not run. 
 
 Edit the Excel:
 - Insert a column named ColorCode. The code will not run without this exact label. Each row in this column must have a color code, format as a Hex code, to determine the color of the point on the graph. 
@@ -68,6 +68,7 @@ Download the 4D Spacing Table:
 - Use Prism to get the list of desired APIs. If the API is only in the NNSAPI column and not in the API column, it will not appear or it will be colored incorrectly.
 - The table must include the following columns: API_UWI, NNSAPI_UWI, 2dDistanceMean_FT, VerticalDistanceMean_FT, NNSSideHeel, NNSSideToe, WBT_ENVInterval, NNS_ENVInterval. All columns must be present even if they are not used.
 - Columns in prism are called WBT API / UWI, Nearest Neighbour API / UWI, 2D Distance, Mean (ft), Vertical Distance, Mean (ft), Nearest Neighbour Side at Heel, Nearest Neighbour Side at Toe, ENV Interval WBT, ENV Interval NNS.
+- If any of the columns are miss labeled the code will not run. 
  
 Edit the Excel File:
 - Insert a column named ColorCode. The code will not run without this exact label. Each row in this column must have a color code, formatted as a Hex code, to determine the color of the point on the graph.
