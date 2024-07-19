@@ -6,7 +6,7 @@ from io import BytesIO
 st.title("More Examples")
 
 #######################################
-st.write("3 Interval Layers Colored by Status:")
+st.header("3 Interval Layers Colored by Status:")
 status_interval="https://github.com/aliciakarlai/streamlit/raw/main/pages/By%20Status_3%20Intervals.jpg"
 st.image(status_interval, caption='3 Interval Layers Colored by Status')
 st.write("Downloadable Examples:")
@@ -19,7 +19,7 @@ Interval_status.raise_for_status()  # Check that the request was successful
 
 # Create a download button for the Excel file
 st.download_button(
-    label="5 Interval Excel",
+    label="3 Interval Excel",
     data=Interval_status.content,
     file_name="3 Interval Data.xlsx",
     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
@@ -40,10 +40,24 @@ st.download_button(
 )
 #################################################################
 ### 5 INTERVAL image
-st.write("5 Interval Layers Colored by Operator:")
+st.header("5 Interval Layers Colored by Operator:")
 operator_interval="https://github.com/aliciakarlai/streamlit/raw/main/pages/By%20Operator_5%20Intervals.jpg"
 st.image(operator_interval, caption='5 Interval Layers Colored by Operator')
 st.write("Downloadable Examples:")
+
+#5 interval well Excel
+five_interval_url= "https://github.com/aliciakarlai/streamlit/raw/main/pages/5%20Intervals.xlsx"
+five_interval= requests.get(five_interval_url)
+five_interval.raise_for_status()  # Check that the request was successful
+
+
+# Create a download button for the Excel file
+st.download_button(
+    label="5 Interval Well Excel",
+    data= five_interval.content,
+    file_name="five_interval Excel Data.xlsx",
+    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+)
 
 
 ##operator well Excel
@@ -60,18 +74,5 @@ st.download_button(
     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 )
 
-#5 interval well Excel
-five_interval_url= "https://github.com/aliciakarlai/streamlit/raw/main/pages/5%20Intervals.xlsx"
-five_interval= requests.get(five_interval_url)
-five_interval.raise_for_status()  # Check that the request was successful
-
-
-# Create a download button for the Excel file
-st.download_button(
-    label="5 Interval Well Excel",
-    data= five_interval.content,
-    file_name="five_interval Excel Data.xlsx",
-    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-)
 
 ##############################################################################################
