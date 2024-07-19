@@ -22,7 +22,7 @@ Download the 4D spacing table:
 
 Edit the Excel:
 - Insert a column named ColorCode. The code will not run without this exact label. Each row in this column must have a color code, format as a Hex code (ex.#EF509A) , to determine the color of the point on the graph. 
-- Color is asigned by API. You can choose to color bu interval, vintage year, unique API or whatever you want. Just make sure all rows with that API and ther NN conection have the same color code. 
+- Color is assigned by API. You can choose to color by interval, vintage year, unique API or whatever you want. Just make sure all rows with that API and there NN conection have the same color code. 
 - Close the Excel, the code cannot run if the excel is open. It needs to be saved as a workbook, not a CSV. 
 
 Upload the Excel File:
@@ -81,10 +81,10 @@ Download the 4D Spacing Table:
 - Columns in prism are called WBT API / UWI, Nearest Neighbour API / UWI, 2D Distance, Mean (ft), Vertical Distance, Mean (ft), Nearest Neighbour Side at Heel, Nearest Neighbour Side at Toe, ENV Interval WBT, ENV Interval NNS.
 - If any of the columns are mislabeled the code will not run. 
  
-Edit the Excel File:
-- Insert a column named ColorCode. The code will not run without this exact label. Each row in this column must have a color code, formatted as a Hex code (ex.#EF509A), to determine the color of the point on the graph.
-- Color is asigned by API. You can choose to color bu interval, vintage year, unique API or whatever you want. Just make sure all rows with that API and ther NN conection have the same color code.
-- Close the Excel file before running the code. Save it as a workbook, not as a CSV.
+Edit the Excel:
+- Insert a column named ColorCode. The code will not run without this exact label. Each row in this column must have a color code, format as a Hex code (ex.#EF509A) , to determine the color of the point on the graph. 
+- Color is assigned by API. You can choose to color by interval, vintage year, unique API or whatever you want. Just make sure all rows with that API and there NN conection have the same color code. 
+- Close the Excel, the code cannot run if the excel is open. It needs to be saved as a workbook, not a CSV. 
 
 Create Interval Excel:
 - Create a second Excel workbook with the columns WBT_ENVInterval, Interval, Color.
