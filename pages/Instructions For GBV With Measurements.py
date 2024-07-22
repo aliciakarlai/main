@@ -44,17 +44,18 @@ Download:
 )
 
 st.write("Downloadable Examples:")
+
 # URL of the Excel file on GitHub
-well_url = "https://github.com/aliciakarlai/streamlit/raw/main/pages/Well%20Data.xlsx"
+well_measure_url = "https://github.com/aliciakarlai/streamlit/raw/main/pages/well_measure.xlsx"
 
 # Fetch the file from GitHub
-response_well = requests.get(well_url)
-response_well.raise_for_status()  # Check that the request was successful
+response_measure_well = requests.get(well_measure_url)
+response_measure_well.raise_for_status()  # Check that the request was successful
 
 # Create a download button for the Excel file
 st.download_button(
-    label="Well Excel",
-    data=response_well.content,
+    label="GBV Well Excel",
+    data=response_measure_well.content,
     file_name="Well Data.xlsx",
     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 )
