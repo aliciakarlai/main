@@ -52,7 +52,7 @@ Download:
 
 st.write("Downloadable Examples:")
 # URL of the Excel file on GitHub
-well_url = "https://github.com/aliciakarlai/streamlit/raw/main/pages/Well%20Data.xlsx"
+well_url = "https://github.com/aliciakarlai/streamlit/raw/main/pages/Well%20Data1.xlsx"
 
 # Fetch the file from GitHub
 response_well = requests.get(well_url)
@@ -68,7 +68,7 @@ st.download_button(
 
 
 # URL of the Excel file on GitHub
-interval_url = "https://github.com/aliciakarlai/streamlit/raw/main/pages/Interval%20Data1.xlsx"
+interval_url = "https://github.com/aliciakarlai/streamlit/raw/main/pages/Interval%20Data.xlsx"
 
 # Fetch the file from GitHub
 response_interval = requests.get(interval_url)
