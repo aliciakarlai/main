@@ -68,11 +68,12 @@ measurement_selected = st.selectbox("How would you like to format size? (inches)
 
 # For the measurements
 if measurement_selected == "Custom":
+    custom_width = st.number_input("Width?", min_value=0.000000, step=0.000001, max_value=7.08611, value=0.000001, format="%f")
+    plotting_area_width_in = custom_width
+    
     custom_height = st.number_input("Height?", min_value=0.000000, step=0.000001, max_value=8.01201, value=0.000001, format="%f")
     plotting_area_height_in = custom_height
     
-    custom_width = st.number_input("Width?", min_value=0.000000, step=0.000001, max_value=7.08611, value=0.000001, format="%f")
-    plotting_area_width_in = custom_width
 else:
     plotting_area_width_in = 7.08661
     plotting_area_height_in = 5
